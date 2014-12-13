@@ -70,6 +70,9 @@ puts "#{name4.capitalize.ljust(30,'.')} #{health4} health."
 
 puts 123.to_s.reverse.to_i
 
+current_time = Time.new
+puts current_time
+
 
 
 
