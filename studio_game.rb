@@ -75,21 +75,67 @@
 
 
 #Methods
-def weekday
-	current_time = Time.new
-	current_time.strftime("%A")
+# def weekday
+# 	current_time = Time.new
+# 	current_time.strftime("%A")
+# end
+
+# def movie_listing(title, rank=0)
+
+# 	 "#{weekday.upcase}: #{title.capitalize} has a rank of #{rank} "
+# end
+
+# puts movie_listing("goonies", 10)
+# puts movie_listing("raiders of the lost ark", 5)
+
+# a_title = "city of god"
+# puts movie_listing(a_title)
+
+
+
+
+# def say_hello(name)
+# 	puts "#{name}"
+
+# end
+
+# say_hello("Floyd")
+
+# def say_hello(name)
+# 	"I'm #{name.capitalize}."
+# end
+# puts say_hello("Genghis")
+
+
+# def say_hello(name, health=100)
+# 	"I'm #{name.capitalize}, my health is #{health}"
+# end
+
+# puts say_hello("larry", 60)
+# puts say_hello("genghis")
+# puts say_hello("tom", 40)
+
+def time
+	#current_time = Time.now.asctime
+  current_time = Time.new
+  current_time.strftime("%I:%M:%S")
+	
 end
 
-def movie_listing(title, rank=0)
-
-	 "#{weekday.upcase}: #{title.capitalize} has a rank of #{rank} "
+def say_hello(name, health=100)
+	"I'm #{name.capitalize}, my health is #{health} at #{time}"
 end
 
-puts movie_listing("goonies", 10)
-puts movie_listing("raiders of the lost ark", 5)
+ puts say_hello("larry", 60)
+ puts say_hello("genghis")
+ puts say_hello("tom", 40)
 
-a_title = "city of god"
-puts movie_listing(a_title)
+
+
+
+
+
+
 
 
 
