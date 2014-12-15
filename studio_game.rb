@@ -115,20 +115,54 @@
 # puts say_hello("genghis")
 # puts say_hello("tom", 40)
 
-def time
-	#current_time = Time.now.asctime
-  current_time = Time.new
-  current_time.strftime("%I:%M:%S")
+# def time
+#   #current_time = Time.now.asctime
+#   current_time = Time.new
+#   current_time.strftime("%I:%M:%S")
 	
+# end
+
+# def say_hello(name, health=100)
+# 	"I'm #{name.capitalize}, my health is #{health} at #{time}"
+# end
+
+#  puts say_hello("larry", 60)
+#  puts say_hello("genghis")
+#  puts say_hello("tom", 40)
+
+#make a class
+
+class Movie
+  def initialize(title, rank)
+  	@title = title.capitalize
+  	@rank = rank
+  	
+  end
+
+  def thumbs_up
+  	#@rank = @rank + 1
+  	@rank += 1
+  end
+
+  def thumbs_down
+  	#@rank = @rank - 1
+  	@rank -= 1
+  end
+
+  def to_s
+  	"#{@title} has a rank of #{@rank}"
+  end
 end
 
-def say_hello(name, health=100)
-	"I'm #{name.capitalize}, my health is #{health} at #{time}"
-end
+movie1 = Movie.new("Dune", 1)
+movie1.thumbs_up
+movie2 = Movie.new("Crooklyn", 10)
+movie2.thumbs_down
+puts movie1.object_id
+puts movie1
+puts movie2
 
- puts say_hello("larry", 60)
- puts say_hello("genghis")
- puts say_hello("tom", 40)
+
 
 
 
