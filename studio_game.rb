@@ -75,12 +75,26 @@
 
 
 #Methods
-
-def movie_listing(title)
-	 "Movie: #{title.capitalize}"
+def weekday
+	current_time = Time.new
+	current_time.strftime("%A")
 end
 
-puts movie_listing("goonies")
+def movie_listing(title, rank=0)
+
+	 "#{weekday.upcase}: #{title.capitalize} has a rank of #{rank} "
+end
+
+puts movie_listing("goonies", 10)
+puts movie_listing("raiders of the lost ark", 5)
+
+a_title = "city of god"
+puts movie_listing(a_title)
+
+
+
+
+
 
 
 
