@@ -132,35 +132,69 @@
 
 #make a class
 
-class Movie
-  def initialize(title, rank)
-  	@title = title.capitalize
-  	@rank = rank
+# class Movie
+#   def initialize(title, rank)
+#   	@title = title.capitalize
+#   	@rank = rank
   	
-  end
+#   end
 
-  def thumbs_up
-  	#@rank = @rank + 1
-  	@rank += 1
-  end
+#   def thumbs_up
+#   	#@rank = @rank + 1
+#   	@rank += 1
+#   end
 
-  def thumbs_down
-  	#@rank = @rank - 1
-  	@rank -= 1
-  end
+#   def thumbs_down
+#   	#@rank = @rank - 1
+#   	@rank -= 1
+#   end
 
-  def to_s
-  	"#{@title} has a rank of #{@rank}"
-  end
+#   def to_s
+#   	"#{@title} has a rank of #{@rank}"
+#   end
+# end
+
+# movie1 = Movie.new("Dune", 1)
+# movie1.thumbs_up
+# movie2 = Movie.new("Crooklyn", 10)
+# movie2.thumbs_down
+# puts movie1.object_id
+# puts movie1
+# puts movie2
+
+
+class Player
+	def initialize(name, health=100)
+		@name = name.capitalize
+		@health = health
+    end
+
+    def blam
+    	@health -=10
+    	puts "#{@name} got blammed!"
+    end
+
+    def woot
+    	@health +=15
+    	puts "#{@name} got wooted!"
+    end
+
+    def to_s
+    	" #{@name} has a health of #{@health}."
+    end
 end
 
-movie1 = Movie.new("Dune", 1)
-movie1.thumbs_up
-movie2 = Movie.new("Crooklyn", 10)
-movie2.thumbs_down
-puts movie1.object_id
-puts movie1
-puts movie2
+player1 = Player.new("moe")
+player2 = Player.new("larry", 60)
+player3 = Player.new("curly", 135)
+
+#puts player1.inspect
+puts player1
+player2.woot
+puts player2
+player3.blam
+puts player3
+
 
 
 
