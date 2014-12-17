@@ -23,9 +23,101 @@
 
 #Methods
 
-def project_total(project, total=0)
-	"#{project.capitalize} has a funding amount of #{total}."
+# def project_total(project, total=0)
+# 	"#{project.capitalize} has a funding amount of #{total}."
+# end
+
+
+# puts project_total("project1", 1500)
+
+# class Player
+# 	def initialize()
+
+# 	end
+# end
+
+
+class Project
+	def initialize(name, goal, amount=1000)
+		@name = name.capitalize
+		@amount = amount
+		@goal = goal
+	end
+
+	def to_s
+		"#{@name} has #{@amount} in funding towards a goal of $#{@goal}."
+	end
+
+	def lost_funds
+		@amount -=500
+		puts "#{@name} lost some funds"
+	end
+
+	def gain_funds
+		@amount +=500
+		puts "#{@name} gained some funding"
+	end
+
+	
 end
 
+project1 = Project.new("project1", 1500)
+project2 = Project.new("project2", 2000, 5000)
+project3 = Project.new("project3", 2000, 3400)
 
-puts project_total("project1", 1500)
+puts project1
+puts project2
+puts project3
+
+project1.gain_funds
+project2.gain_funds
+project3.gain_funds
+
+puts project1
+puts project2
+puts project3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
