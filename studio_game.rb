@@ -164,6 +164,10 @@
 
 
 class Player
+	attr_accessor :name
+    attr_reader :health
+
+
 	def initialize(name, health=100)
 		@name = name.capitalize
 		@health = health
@@ -179,8 +183,13 @@ class Player
     	puts "#{@name} got wooted!"
     end
 
+    def score
+    	@health + @name.length
+    end
+
+
     def to_s
-    	" #{@name} has a health of #{@health}."
+    	" #{@name} has a health of #{@health} and a score of #{score}."
     end
 end
 
@@ -195,6 +204,13 @@ puts player2
 player3.blam
 puts player3
 
+
+puts player1.health
+puts player2.health
+puts player1.name
+puts player2.name
+player2.name = "Lawrence"
+puts player2.name
 
 
 
