@@ -187,6 +187,10 @@ class Player
     	@health + @name.length
     end
 
+    def name=(new_name)
+        @name = new_name.capitalize
+    end
+
 
     def to_s
     	" #{@name} has a health of #{@health} and a score of #{score}."
@@ -209,7 +213,7 @@ puts player1.health
 puts player2.health
 puts player1.name
 puts player2.name
-player2.name = "Lawrence"
+player2.name = "lawrence"
 puts player2.name
 
 

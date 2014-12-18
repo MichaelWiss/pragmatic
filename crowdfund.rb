@@ -38,6 +38,10 @@
 
 
 class Project
+
+    attr_reader :goal, :amount
+    attr_accessor :name
+
 	def initialize(name, goal, amount=1000)
 		@name = name.capitalize
 		@amount = amount
@@ -58,6 +62,10 @@ class Project
 		puts "#{@name} gained some funding"
 	end
 
+	def funding_needed
+		@goal - @amount
+	end
+
 	
 end
 
@@ -76,6 +84,13 @@ project3.gain_funds
 puts project1
 puts project2
 puts project3
+
+puts project1.amount
+puts project2.goal
+puts project3.amount
+puts project1.funding_needed
+
+
 
 
 
