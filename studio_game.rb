@@ -308,40 +308,80 @@ class Player
     end
 end
 
-player1 = Player.new("moe")
-player2 = Player.new("larry", 60)
-player3 = Player.new("curly", 135)
+# player1 = Player.new("moe")
+# player2 = Player.new("larry", 60)
+# player3 = Player.new("curly", 135)
 
-players = [player1, player2, player3]
+# players = [player1, player2, player3]
 
-puts "There are #{players.size} players in the game:"
+# puts "There are #{players.size} players in the game:"
 
-players.each do |p|
-	puts p
-end
+# players.each do |p|
+# 	puts p
+# end
+
+# # players.each do |player|
+# # 	puts player
+# # end
+
+# # players.each do |player|
+# # 	puts player.health
+# # end
+
+# players.pop
+# player4 = Player.new("Shemp", 90)
+# players.push(player4)
+
+
+
 
 # players.each do |player|
+# 	player.blam
+# 	player.woot
+# 	player.blam
+
 # 	puts player
 # end
 
-# players.each do |player|
-# 	puts player.health
-# end
+class Game
+	attr_reader :title
 
-players.pop
-player4 = Player.new("Shemp", 90)
-players.push(player4)
+	def initialize(title)
+	  @title = title
+	  @players = []
+    end
+    def add_player(a_player)
+      @players.push(a_player)
+    end
 
-
-
-
-players.each do |player|
-	player.blam
-	player.woot
-	player.blam
-
-	puts player
+    def play
+      puts "There are #{@players.size} players in #{@title}: "
+      puts @player
+      @players.each do |player|
+      	
+      end
+      @players.each do |player|
+      	player.blam
+      	player.woot
+      	player.woot
+      	player.blam
+      	
+      	puts player
+    end
+  end
 end
+
+player1 = Player.new("moe")
+player2 = Player.new("larry", 60)
+player3 = Player.new("curly", 125)
+    
+knuckleheads = Game.new("knuckleheads")
+knuckleheads.add_player(player1)
+knuckleheads.add_player(player2)
+knuckleheads.add_player(player3)
+knuckleheads.play
+
+
 
 
 
