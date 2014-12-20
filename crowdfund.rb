@@ -90,7 +90,16 @@ puts project2.goal
 puts project3.amount
 puts project1.funding_needed
 
+projects = ["project1", "project2", "project3"]
 
+puts projects.size
+
+projects.each do |project|
+  project1.gain_funds
+  project2.gain_funds
+  project3.gain_funds
+  puts project
+end
 
 
 
