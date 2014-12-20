@@ -163,6 +163,117 @@
 # puts movie2
 
 
+# class Player
+# 	attr_accessor :name
+#     attr_reader :health
+
+
+# 	def initialize(name, health=100)
+# 		@name = name.capitalize
+# 		@health = health
+#     end
+
+#     def blam
+#     	@health -=10
+#     	puts "#{@name} got blammed!"
+#     end
+
+#     def woot
+#     	@health +=15
+#     	puts "#{@name} got wooted!"
+#     end
+
+#     def score
+#     	@health + @name.length
+#     end
+
+#     def name=(new_name)
+#         @name = new_name.capitalize
+#     end
+
+
+#     def to_s
+#     	" #{@name} has a health of #{@health} and a score of #{score}."
+#     end
+# end
+
+# player1 = Player.new("moe")
+# player2 = Player.new("larry", 60)
+# player3 = Player.new("curly", 135)
+
+# #puts player1.inspect
+# puts player1
+# player2.woot
+# puts player2
+# player3.blam
+# puts player3
+
+
+# puts player1.health
+# puts player2.health
+# puts player1.name
+# puts player2.name
+# player2.name = "lawrence"
+# puts player2.name
+
+
+# books = ["Blink", "Freakonomics", "Outliers"]
+
+# puts books
+
+# #alternately
+
+# books = %w(Blink Freakonomics Outliers)
+
+# puts books
+
+# puts books.length
+# puts books[1]
+# puts books[3]
+
+# books.size
+# books[1]
+# books[3]
+
+
+# books = []
+# books.push("Blink")
+
+# puts books
+
+# books.push("Freakonimics")
+
+# puts books
+
+# books.push("Outliers")
+
+# puts books
+
+# books.pop
+
+# puts books
+
+# books.pop
+
+# puts books
+
+# books.pop
+
+# puts books
+
+# books = ["Blink", "Freakonomics", "Outliers"]
+
+# books = books.join(" and ")
+
+# puts books
+
+# books = ["Blink", "Freakonomics", "Outliers"]
+
+# books = books.shuffle
+
+# puts books
+
+
 class Player
 	attr_accessor :name
     attr_reader :health
@@ -201,20 +312,49 @@ player1 = Player.new("moe")
 player2 = Player.new("larry", 60)
 player3 = Player.new("curly", 135)
 
-#puts player1.inspect
-puts player1
-player2.woot
-puts player2
-player3.blam
-puts player3
+players = [player1, player2, player3]
+
+puts "There are #{players.size} players in the game:"
+
+players.each do |p|
+	puts p
+end
+
+# players.each do |player|
+# 	puts player
+# end
+
+# players.each do |player|
+# 	puts player.health
+# end
+
+players.pop
+player4 = Player.new("Shemp", 90)
+players.push(player4)
 
 
-puts player1.health
-puts player2.health
-puts player1.name
-puts player2.name
-player2.name = "lawrence"
-puts player2.name
+
+
+players.each do |player|
+	player.blam
+	player.woot
+	player.blam
+
+	puts player
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
