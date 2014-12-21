@@ -37,69 +37,98 @@
 # end
 
 
-class Project
+# require_relative 'project'
+# require_relative 'ProjectStatus'
 
-    attr_reader :goal, :amount
-    attr_accessor :name
+# project1 = Project.new("project1", 1500)
+# project2 = Project.new("project2", 2000, 5000)
+# project3 = Project.new("project3", 2000, 3400)
 
-	def initialize(name, goal, amount=1000)
-		@name = name.capitalize
-		@amount = amount
-		@goal = goal
-	end
+# puts project1
+# puts project2
+# puts project3
 
-	def to_s
-		"#{@name} has #{@amount} in funding towards a goal of $#{@goal}."
-	end
+# project1.gain_funds
+# project2.gain_funds
+# project3.gain_funds
 
-	def lost_funds
-		@amount -=500
-		puts "#{@name} lost some funds"
-	end
+# puts project1
+# puts project2
+# puts project3
 
-	def gain_funds
-		@amount +=500
-		puts "#{@name} gained some funding"
-	end
+# puts project1.amount
+# puts project2.goal
+# puts project3.amount
+# puts project1.funding_needed
 
-	def funding_needed
-		@goal - @amount
-	end
+# projects = ["project1", "project2", "project3"]
 
-	
-end
+# puts projects.size
+
+# projects.each do |project|
+#   project1.gain_funds
+#   project2.gain_funds
+#   project3.gain_funds
+#   puts project
+# end
+
+
+
+require_relative 'project'
+require_relative 'projectstatus'
 
 project1 = Project.new("project1", 1500)
 project2 = Project.new("project2", 2000, 5000)
 project3 = Project.new("project3", 2000, 3400)
+project4 = Project.new("project4", 5000, 6400)
 
-puts project1
-puts project2
-puts project3
+projectstatus = ProjectStatus.new("Current Status")
 
-project1.gain_funds
-project2.gain_funds
-project3.gain_funds
 
-puts project1
-puts project2
-puts project3
 
-puts project1.amount
-puts project2.goal
-puts project3.amount
-puts project1.funding_needed
 
-projects = ["project1", "project2", "project3"]
+puts projectstatus.title
+projectstatus.add_project(project1)
+projectstatus.add_project(project2)
+projectstatus.add_project(project3)
+projectstatus.add_project(project4)
+projectstatus.request_funding
 
-puts projects.size
 
-projects.each do |project|
-  project1.gain_funds
-  project2.gain_funds
-  project3.gain_funds
-  puts project
-end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
