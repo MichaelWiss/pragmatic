@@ -14,10 +14,10 @@ class ProjectStatus
     end
 
     def request_funding
-      puts "There are #{@projects.size} players in #{@title}: "
+      puts "There are #{@projects.size} projects in #{@title}: "
       
       @projects.each do |project|
-      puts @project	
+      puts project	
       end
       @projects.each do |project|
       	project.lost_funds

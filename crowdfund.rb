@@ -82,7 +82,7 @@ project2 = Project.new("project2", 2000, 5000)
 project3 = Project.new("project3", 2000, 3400)
 project4 = Project.new("project4", 5000, 6400)
 
-projectstatus = ProjectStatus.new("Current Status")
+projectstatus = ProjectStatus.new("Current Projects")
 
 
 
