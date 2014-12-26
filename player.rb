@@ -28,7 +28,7 @@ class Player
 
 
     def to_s
-    	" #{@name} has a health of #{@health} and a score of #{score}."
+    	"#{@name} has a health of #{@health} and a score of #{score}."
     end
 end
 
