@@ -37,7 +37,7 @@ if __FILE__ == $0
 player = Player.new("moe")
 puts player.name
 puts player.health
-player.w00t
+player.woot
 puts player.health
 player.blam
 puts player.health
