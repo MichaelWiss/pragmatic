@@ -6,6 +6,7 @@ describe Project do
   	 
      @amount = 1000
      @project = Project.new("project1", @amount)
+     $stdout = StringIO.new 
    end
 
  it "has a capitalized name" do
