@@ -33,6 +33,11 @@ class Project
 end
 
 if __FILE__ == $0
-
-
+  project = Project.new("project1")
+  puts project.name
+  puts project.amount
+  project.gain_funds
+  puts project.amount
+  project.lost_funds
+  puts project.amount
 end
