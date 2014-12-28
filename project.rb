@@ -40,4 +40,6 @@ if __FILE__ == $0
   puts project.amount
   project.lost_funds
   puts project.amount
+  project.gain_funds
+  puts project.amount
 end
