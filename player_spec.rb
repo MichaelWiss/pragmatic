@@ -39,4 +39,30 @@ describe Player do
      expect(@player.health).to eq(@initial_health - 10)
   end
 
+
+
  end
+
+
+ context "with a health of at least 10" do
+ 	before do
+     @initial_health = 150
+     @player = Player.new("larry", @initial_health)
+    end
+   it "has a high score" do
+   	expect(@player.hit? )== true
+
+   end
+
+end
+
+
+
+
+
+
+
+
+
+
+

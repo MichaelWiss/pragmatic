@@ -8,6 +8,10 @@ class Player
 		@health = health
     end
 
+     def hit?
+        true
+    end
+
     def blam
     	@health -=10
     	puts "#{@name} got blammed!"

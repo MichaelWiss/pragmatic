@@ -24,3 +24,4 @@ describe Project do
       expect(@project.amount).to eq(@amount + 500)
    end
 end
+
