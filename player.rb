@@ -12,6 +12,10 @@ class Player
         true
     end
 
+    def strong?
+        true
+    end
+
     def blam
     	@health -=10
     	puts "#{@name} got blammed!"

@@ -56,6 +56,19 @@ describe Player do
 
 end
 
+context "with a health greater than 150" do
+ 	before do
+     @initial_health = 150
+     @player = Player.new("larry", @initial_health)
+    end
+   it "has a high score" do
+   	expect(@player.strong? )== true
+
+   end
+
+end
+
+
 
 
 
