@@ -9,7 +9,7 @@ class Player
     end
 
      def hit?
-        true
+        @health >=160
     end
 
     def strong?

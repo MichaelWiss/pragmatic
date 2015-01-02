@@ -67,6 +67,17 @@ context "with a health greater than 150" do
 
    end
 
+  context "created with a default health" do
+  	before do
+  		@player = Player.new("Tony", health=0)
+  	end
+
+  it "has a health of 0" do
+  	@player.health.should == 0
+
+  end
+end
+
 end
 
 
