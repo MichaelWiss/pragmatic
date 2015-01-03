@@ -67,6 +67,10 @@ context "with a health greater than 150" do
 
    end
 
+   it "is strong" do
+   	expect(@player).to be_strong
+   end
+
   context "created with a default health" do
   	before do
   		@player = Player.new("Tony", health=0)
@@ -78,6 +82,16 @@ context "with a health greater than 150" do
   end
 end
 
+context "with an initial health of 100 or less" do
+	before do
+	@initial_health = 100
+	@player = Player.new("Pierre", @initial_health)
+end
+   it "does not have a health of 150" do
+   	@player.should_not  be_strong
+
+   end
+ end
 end
 
 
