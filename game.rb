@@ -9,6 +9,7 @@ class Game
 	  @title = title
 	  @players = []
     end
+    
     def add_player(a_player)
       @players.push(a_player)
     end

@@ -322,13 +322,14 @@ knuckleheads = Game.new("knuckleheads")
 knuckleheads.add_player(player1)
 knuckleheads.add_player(player2)
 knuckleheads.add_player(player3)
-
-
-
-knuckleheads = Game.new("knuckleheads")
-player3 = Player.new("curly", 125)
-knuckleheads.add_player(player3)
 knuckleheads.play
+
+
+
+# knuckleheads = Game.new("knuckleheads")
+# player3 = Player.new("curly", 125)
+# knuckleheads.add_player(player3)
+# knuckleheads.play
 
 
 
