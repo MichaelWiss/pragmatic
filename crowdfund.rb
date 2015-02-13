@@ -83,10 +83,6 @@ project3 = Project.new("project3", 2000, 3400)
 project4 = Project.new("project4", 5000, 6400)
 
 projectstatus = ProjectStatus.new("Current Projects")
-
-
-
-
 puts projectstatus.title
 projectstatus.add_project(project1)
 projectstatus.add_project(project2)
