@@ -63,12 +63,12 @@ context "with a health greater than 150" do
      @player = Player.new("larry", @initial_health)
     end
    it "has a high score" do
-   	expect(@player.strong? )== true
+   	expect(@player.strong? ).to eq(true)
 
    end
 
    it "is strong" do
-   	expect(@player).to be_strong
+   	expect(@player.strong?).to eq(true)
    end
 
   context "created with a default health" do
