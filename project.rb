@@ -29,6 +29,9 @@ class Project
 		@goal - @amount
 	end
 
+    def greater?
+    	true
+    end
 	
 end
 

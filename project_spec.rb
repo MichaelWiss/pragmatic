@@ -1,4 +1,5 @@
 require_relative 'project'
+require_relative 'spec_helper'
 
 describe Project do
 
@@ -18,10 +19,20 @@ describe Project do
       expect(@amount).to eq(1000)
   end
 
-  it "increases health by 500 when gaining funds" do
+  it "increases amount by 500 when gaining funds" do
      @project.gain_funds
 
       expect(@project.amount).to eq(@amount + 500)
+   end
+
+   context "with an amount greater than 1000" do
+   	before do
+   		@project = Project.new("projectA", 1500)
+   	end
+
+   	it "is greater" do
+   		expect(@project.greater?).to eq(true)
+   	end
    end
 end
 
