@@ -19,7 +19,7 @@ describe Project do
       expect(@amount).to eq(1000)
   end
 
-  it "increases amount by 500 when gaining funds" do
+ it "increases amount by 500 when gaining funds" do
      @project.gain_funds
 
       expect(@project.amount).to eq(@amount + 500)
@@ -31,8 +31,8 @@ describe Project do
    	end
 
    	it "is greater" do
-   		expect(@project.greater?).to eq(true)
+   		@project.greater?.should be_truthy 
    	end
-   end
+  end
 end
 
