@@ -6,7 +6,7 @@ describe Project do
   before do
   	 
      @amount = 1000
-     @project = Project.new("project1", @amount)
+     @project = Project.new("project1", 1000, @amount)
      $stdout = StringIO.new 
    end
 
@@ -25,14 +25,36 @@ describe Project do
       expect(@project.amount).to eq(@amount + 500)
    end
 
-   context "with an amount greater than 1000" do
-   	before do
-   		@project = Project.new("projectA", 1500)
-   	end
-
-   	it "is greater" do
-   		@project.greater?.should be_truthy 
-   	end
+    context "created without a funding amount" do
+    before do
+      @project = Project.new("Project ABC", 5000)
+    end
+    
+    it "has a default funding amount of 0" do
+      @project.amount.should == 0
+    end
   end
-end
+
+
+ # context "with an amount greater than 1000" do
+ #   	before do
+ #   		@project = Project.new("projectA", 10, 1000)
+ #   	end
+
+ #   	it "is greater" do
+ #   		@project.greater?.should be_truthy
+ #   	end
+ #  end
+
+
+
+#   context "with an amount less than 1000" do
+#   	before do
+#   	   @project = Project.new("projectB", 1000, 1000)
+#   	end
+#   	it "is underfunded" do
+#   	 @project.should_not be_greater
+#   	end
+#   end
+ end
 

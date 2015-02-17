@@ -5,7 +5,7 @@ class Project
     attr_reader :goal, :amount
     attr_accessor :name
 
-	def initialize(name, goal, amount=1000)
+	def initialize(name, goal, amount=0)
 		@name = name.capitalize
 		@amount = amount
 		@goal = goal
@@ -30,7 +30,7 @@ class Project
 	end
 
     def greater?
-    	true
+    	@amount >= 100
     end
 	
 end
