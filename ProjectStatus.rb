@@ -1,5 +1,6 @@
 
 require_relative 'project'
+require_relative '1die'
 
 
 class ProjectStatus
@@ -20,9 +21,14 @@ class ProjectStatus
       puts project	
       end
       @projects.each do |project|
-      	project.lost_funds
-      	project.gain_funds
-      	project.gain_funds
+      	die = Die.new
+      	number_rolled = die.roll
+      	if number_rolled.odd?
+      		project.lost_funds
+      	else
+      		project.gain_funds
+      	end
+      
       	
       	puts project
     end
