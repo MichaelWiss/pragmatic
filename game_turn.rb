@@ -1,3 +1,6 @@
+require_relative 'player'
+require_relative 'die'
+
 module GameTurn
   def self.take_turn(player)
     die = Die.new
@@ -7,7 +10,7 @@ module GameTurn
     when 3..4
       puts "#{player.name} was skipped."
     else
-      player.w00t
+      player.woot
     end
   end
 end
