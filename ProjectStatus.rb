@@ -1,6 +1,7 @@
 
 require_relative 'project'
 require_relative '1die'
+require_relative 'funding_round'
 
 
 class ProjectStatus
