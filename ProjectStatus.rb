@@ -6,7 +6,8 @@ require_relative 'funding_round'
 
 class ProjectStatus
 
-	attr_reader :title
+   attr_reader :title
+
    def initialize(title)
    	  @title = title
 	  @projects = []
@@ -18,21 +19,12 @@ class ProjectStatus
     def request_funding
       puts "There are #{@projects.size} projects in #{@title}: "
       
+     @projects.each do |project|
+       puts project	
+     end
       @projects.each do |project|
-      puts project	
-      end
-      @projects.each do |project|
-      	die = Die.new
-      	number_rolled = die.roll
-      	if number_rolled.odd?
-      		project.lost_funds
-      	else
-      		project.gain_funds
-      	end
-      
-      	
-      	puts project
-    end
-  end
-
+      	FundingRound.take_round(project)
+        puts project
+     end
+   end
 end
