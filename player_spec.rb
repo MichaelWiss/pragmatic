@@ -87,16 +87,30 @@ context "with a health greater than 150" do
   end
 end
 
-context "with an initial health of 100 or less" do
+  context "with an initial health of 100 or less" do
 	before do
 	@initial_health = 100
 	@player = Player.new("Pierre", @initial_health)
-end
+   end
    it "does not have a health of 150" do
    	@player.should_not  be_strong
 
    end
- end
+
+   context "in a collection of players" do
+    before do
+    @player1 = Player.new("moe", 100)
+    @player2 = Player.new("larry", 200)
+    @player3 = Player.new("curly", 300)
+
+    @players = [@player1, @player2, @player3]
+   end
+  
+  it "is sorted by decreasing score" do
+    @players.sort.should == [@player3, @player2, @player1]
+  end
+end
+
 end
 
 
