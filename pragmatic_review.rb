@@ -1,6 +1,16 @@
-def say_hello(name)
-  puts "I'm #{name.capitalize}."
+
+def time
+  current_time = Time.new
+  current_time.strftime("%I:%M:%S")
 end
 
-say_hello("larry")
+
+
+def say_hello(name, health=100)
+  "I'm #{name.capitalize} with a health of #{health} as of #{time}."
+end
+
+puts say_hello("larry")
+
+puts say_hello("moe", 200)
 
