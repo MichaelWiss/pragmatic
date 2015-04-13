@@ -27,5 +27,7 @@ end
 
 
 player1 = Player.new("moe", 100)
+player2 = Player.new("larry", 100)
 puts player1.say_hello
+puts player2.say_hello
 
