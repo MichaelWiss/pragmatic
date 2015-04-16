@@ -32,6 +32,10 @@ class Player
       puts "#{@name} got w00ted!"
     end
 
+    def strong?
+      true
+    end
+
    
 end
 
