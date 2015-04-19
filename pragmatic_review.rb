@@ -62,6 +62,7 @@ player1 = Player.new("moe")
 player2 = Player.new("larry", 60)
 player3 = Player.new("curly", 125)
 player4 = Player.new("dickie", 125)
+player5 = Player.new("Antoinette", 125)
     
 knuckleheads = Game.new("Knuckleheads")
 knuckleheads.add_player(player1)
