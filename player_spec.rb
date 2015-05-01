@@ -1,9 +1,7 @@
 require_relative 'player'
 require_relative 'spec_helper'
 
- 
-
-describe Player do
+ describe Player do
 
   before do
      @initial_health = 150
@@ -11,33 +9,29 @@ describe Player do
    end
 	
   it "has a capitalized name" do
-      
       expect(@player.name).to eq("Larry")
   end
+
   it "has an initial health" do
-  	
   	expect(@player.health).to eq(150)
   end
+
   it "has a string representation" do
-  	
   	expect(@player.to_s).to eq("Larry has a health of 150 and a score of 155.")
   end
 
   it "computes a score as the sum of its health and length of name" do  
-    
     expect(@player.score).to eq(150 + 5)
   end
 
   it "increases health by 15 when wooted" do
-  	
-    @player.woot
+  	@player.woot
     expect(@player.health).to eq(@initial_health + 15)
   end
 
   it "decreases health by 10 when blammed" do
     @player.blam
-
-     expect(@player.health).to eq(@initial_health - 10)
+    expect(@player.health).to eq(@initial_health - 10)
   end
 
 
@@ -57,7 +51,7 @@ describe Player do
 
 end
 
-context "with a health greater than 150" do
+context "with a health greater than 100" do
  	before do
      @initial_health = 150
      @player = Player.new("larry", @initial_health)
@@ -80,7 +74,6 @@ context "with a health greater than 150" do
   	before do
   		@player = Player.new("Tony", health=0)
   	end
-  end
 
   it "has a health of 0" do
   	@player.health.should == 0
@@ -97,6 +90,7 @@ end
    	@player.should_not  be_strong
 
    end
+end
 
    context "in a collection of players" do
     before do
@@ -107,10 +101,10 @@ end
     @players = [@player1, @player2, @player3]
    end
   
-    it "is sorted by decreasing score" do
+  it "is sorted by decreasing score" do
     @players.sort.should == [@player3, @player2, @player1]
-   end
- end
+  end
+end
 
 end
 
