@@ -12,5 +12,8 @@ module GameTurn
     else
       player.woot
     end
+
+    treasure = TreasureTrove.random
+    puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points."
   end
 end

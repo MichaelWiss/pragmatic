@@ -80,6 +80,7 @@ context "with a health greater than 150" do
   	before do
   		@player = Player.new("Tony", health=0)
   	end
+  end
 
   it "has a health of 0" do
   	@player.health.should == 0
@@ -106,10 +107,10 @@ end
     @players = [@player1, @player2, @player3]
    end
   
-  it "is sorted by decreasing score" do
+    it "is sorted by decreasing score" do
     @players.sort.should == [@player3, @player2, @player1]
-  end
-end
+   end
+ end
 
 end
 
