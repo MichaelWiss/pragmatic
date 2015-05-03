@@ -2,6 +2,7 @@
 require_relative 'project'
 require_relative '1die'
 require_relative 'funding_round'
+require_relative 'pledgepool'
 
 
 class ProjectStatus
