@@ -27,5 +27,11 @@ class ProjectStatus
       	FundingRound.take_round(project)
         puts project
      end
+     pledges = PledgePool::PLEDGES
+     puts "\nThere are #{pledges.size} pledge levels:"
+     pledges.each do |pledge|
+     puts "A #{pledge.name} is worth #{pledge.amount} amount"
+     end
    end
+
 end
