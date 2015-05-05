@@ -25,48 +25,57 @@ class Game
         @players.each do |player|
         puts player
       end
-     treasures = TreasureTrove::TREASURES
-       puts "\nThere are #{treasures.size} treasures to be found:"
-       treasures.each do |treasure|
-       puts "A #{treasure.name} is worth #{treasure.points} points"
+         treasures = TreasureTrove::TREASURES
+         puts "\nThere are #{treasures.size} treasures to be found:"
+         treasures.each do |treasure|
+         puts "A #{treasure.name} is worth #{treasure.points} points"
       end
 
-      1.upto(rounds) do |round|
-        puts "\nRound #{round}:"
-        @players.each do |player|
-      	GameTurn.take_turn(player)
-      	puts player
+         1.upto(rounds) do |round|
+         puts "\nRound #{round}:"
+         @players.each do |player|
+      	 GameTurn.take_turn(player)
+      	 puts player
       end
 
       def print_name_and_health(player)
          puts "#{player.name} (#{player.health})"
       end
 
-     def print_stats
-       strong_players, wimpy_players = @players.partition { |player| player.strong? } 
-       puts "\n#{@title} Statistics:"
+      def total_points
+        @players.reduce(0) { |sum, player| sum + player.points }
+      end
 
-       puts "\n#{strong_players.size} strong players:"
-       strong_players.each do |player|
+
+      def print_stats
+         strong_players, wimpy_players = @players.partition { |player| player.strong? } 
+         puts "\n#{@title} Statistics:"
+
+         puts "\n#{strong_players.size} strong players:"
+         strong_players.each do |player|
          print_name_and_health(player)
-     end    
+         puts "#{total_points} total points from treasures found"
+      end    
 
-       puts "\n#{wimpy_players.size} wimpy players:"
-       wimpy_players.each do |player|
-        print_name_and_health(player)
-     end
+         puts "\n#{wimpy_players.size} wimpy players:"
+         wimpy_players.each do |player|
+         print_name_and_health(player)
+      end
      
        
-       puts "\n#{@title} High Scores:"
-       @players.sort.each do |player|
-       formatted_name = player.name.ljust(20, '.')
-       puts "#{formatted_name} #{player.score}"
-     end
+         puts "\n#{@title} High Scores:"
+         @players.sort.each do |player|
+         formatted_name = player.name.ljust(20, '.')
+         puts "#{formatted_name} #{player.score}"
+      end
 
-     @players.each do |player|
-      puts "\n#{player.name}'s point totals:"
-      puts "#{player.points} grand total points"
-    end
+        @players.each do |player|
+        puts "\n#{player.name}'s point totals:"
+        puts "#{player.points} grand total points"
+      end
+
+      
+
 
        
      end
