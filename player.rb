@@ -38,7 +38,7 @@ class Player
     end
 
     def score
-    	@health + @name.length
+    	@health + points
     end
 
     def name=(new_name)
@@ -47,7 +47,7 @@ class Player
 
 
     def to_s
-    	"#{@name} has a health of #{@health} and a score of #{score}."
+    	"I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
     end
 
 
