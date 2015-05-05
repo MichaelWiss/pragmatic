@@ -36,6 +36,22 @@ describe Project do
     end
   end
 
+     it "computes amount as the sum of all pledges" do
+  
+     expect(@project.amount).to eq(0)
+     expect(@pledge.pledge(Pledge.new:bronze, 50))
+     expect(@pledge.amount).to eq(50)
+
+  # @player.found_treasure(Treasure.new(:crowbar, 400))
+  #    expect()
+
+  # @player.points.should == 450
+
+  # @player.found_treasure(Treasure.new(:hammer, 50))
+
+  # @player.points.should == 500
+end
+
 
  # context "with an amount greater than 1000" do
  #   	before do

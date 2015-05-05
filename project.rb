@@ -12,15 +12,21 @@ class Project
 		@pledge = Hash.new(0)
 	end
 
-	def amount
-       @pledge.values.reduce(0, :+)
-    end
+	
 
 	def pledge(pledge)
 		@pledge[pledge.name] += pledge.amount
 		puts "#{@name} found a #{pledge.name} worth #{pledge.amount} amount."
 		puts "#{@name}'s pledge amount: #{@pledge}"
 	end
+
+	def amount
+       @pledge.values.reduce(0, :+)
+    end
+
+    def total_funding
+    	@amount + amount
+    end
 
 	def to_s
 		"#{@name} has #{@amount} in funding towards a goal of $#{@goal}."

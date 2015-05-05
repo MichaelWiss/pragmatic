@@ -32,6 +32,10 @@ class ProjectStatus
      pledges.each do |pledge|
      puts "A #{pledge.name} is worth #{pledge.amount} amount"
      end
+     @projects.each do |project|
+       puts "\n#{project.name}'s funding totals:"
+       puts "#{project.total_funding} grand total points"
+     end
    end
 
 end
