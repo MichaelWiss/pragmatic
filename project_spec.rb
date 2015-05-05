@@ -1,5 +1,6 @@
 require_relative 'project'
 require_relative 'spec_helper'
+require_relative 'treasure_trove'
 
 describe Project do
 
@@ -25,7 +26,7 @@ describe Project do
       expect(@project.amount).to eq(@amount + 500)
    end
 
-    context "created without a funding amount" do
+  context "created without a funding amount" do
     before do
       @project = Project.new("Project ABC", 5000)
     end

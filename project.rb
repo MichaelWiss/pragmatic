@@ -9,6 +9,17 @@ class Project
 		@name = name.capitalize
 		@amount = amount
 		@goal = goal
+		@pledge = Hash.new(0)
+	end
+
+	def amount
+       @pledge.values.reduce(0, :+)
+    end
+
+	def pledge(pledge)
+		@pledge[pledge.name] += pledge.amount
+		puts "#{@name} found a #{pledge.name} worth #{pledge.amount} amount."
+		puts "#{@name}'s pledge amount: #{@pledge}"
 	end
 
 	def to_s
