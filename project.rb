@@ -28,6 +28,8 @@ class Project
     	@amount + amount
     end
 
+    
+
 	def to_s
 		"#{@name} has #{@amount} in funding towards a goal of $#{@goal}."
 	end
