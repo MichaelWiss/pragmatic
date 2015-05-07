@@ -10,10 +10,20 @@ class Game
 	attr_reader :title
 
       def load_players(from_file)
-       File.readlines(from_file).each do |line|
-       name, health = line.split(',')
-       player = Player.new(name, Integer(health))
-       add_player(player)
+        File.readlines(from_file).each do |line|
+        name, health = line.split(',')
+        player = Player.new(name, Integer(health))
+        add_player(player)
+        end
+      end
+
+      def save_high_scores(to_file="high_scores.txt")
+         File.open(to_file, "w") do |file|
+          file.puts "#{@title} High Scores:"
+          @players.sort.each do |player|
+            formatted_name = player.name.ljust(20, '.')
+            file.puts "#{formatted_name} #{player.score}"
+          end
         end
       end
 
