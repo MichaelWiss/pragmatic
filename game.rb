@@ -9,6 +9,14 @@ require_relative 'treasure_trove'
 class Game
 	attr_reader :title
 
+      def load_players(from_file)
+       File.readlines(from_file).each do |line|
+       name, health = line.split(',')
+       player = Player.new(name, Integer(health))
+       add_player(player)
+        end
+      end
+
 	    def initialize(title)
 	      @title = title
 	      @players = []
