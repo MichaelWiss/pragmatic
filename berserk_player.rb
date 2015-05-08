@@ -16,6 +16,17 @@ class BerserkPlayer < Player
     	puts "#{@name} is berserk!" if berserk?
     end
 
+    def blam
+       if berserk?
+        woot
+    else
+        super
+      end
+
+      # or use the ternary operator:
+    # berserk? ? w00t : super
+    end
+
  end
 
     if __FILE__ == $0
