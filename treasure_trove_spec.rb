@@ -1,4 +1,5 @@
 require_relative 'treasure_trove'
+require_relative 'spec_helper'
    
 describe Treasure do
   
