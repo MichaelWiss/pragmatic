@@ -1,6 +1,7 @@
 require_relative 'treasure_trove'
 
 class Player
+    include Playable
 	attr_accessor :name
     attr_reader :health
 
@@ -31,19 +32,7 @@ class Player
         @health >=160
     end
 
-    def strong?
-        @health > 100
-    end
-
-    def blam
-    	@health -=10
-    	puts "#{@name} got blammed!"
-    end
-
-    def woot
-    	@health +=15
-    	puts "#{@name} got wooted!"
-    end
+    
 
     def score
     	@health + points
