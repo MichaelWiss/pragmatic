@@ -1,17 +1,20 @@
-module Playable
+  module StudioGame
+   module Playable
 
-	def strong?
-        @health > 100
+
+    def strong?
+       self.health > 100
     end
 
     def blam
-    	@health -=10
-    	puts "#{@name} got blammed!"
+        self.health -=10
+        puts "#{@name} got blammed!"
     end
 
     def woot
-    	@health +=15
-    	puts "#{@name} got wooted!"
+        self.health +=15
+        puts "#{@name} got wooted!"
     end
 
-end
+  end
+ end
