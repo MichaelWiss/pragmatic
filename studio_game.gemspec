@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.version      = "1"
   s.author       = "Michael Wiss"
   s.email        = "michael.wiss@gmail.com"
-  s.homepage     = "michaelrwiss.com"
+  s.homepage     = "http://michaelrwiss.com"
   s.summary      = "A fun, and entirely random, text-based game"
   s.description  = File.read(File.join(File.dirname(__FILE__), 'README'))
   s.licenses     = ['MIT']
