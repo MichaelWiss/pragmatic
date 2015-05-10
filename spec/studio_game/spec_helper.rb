@@ -1,4 +1,5 @@
 RSpec.configure do |config|
+ module StudioGame
   config.expect_with :rspec do |c|
     c.syntax = [:should, :expect]
   end
@@ -7,4 +8,5 @@ RSpec.configure do |config|
   end
   config.color = true
   
+ end
 end

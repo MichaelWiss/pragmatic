@@ -8,18 +8,18 @@ puts player.health == 10
 puts player
 
 if player.health >= 10
-	puts "High score!"
+   puts "High score!"
 end
 
 puts "High score" if player.health >= 10
 
 if player.health < 10
-	puts "low"
+   puts "low"
 end
 
 if player.health >= 10
-	puts "High score"
+   puts "High score"
 else
-	puts "low"
+    puts "low"
 end
 

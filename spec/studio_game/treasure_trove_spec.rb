@@ -1,7 +1,9 @@
-require_relative 'treasure_trove'
-require_relative 'spec_helper'
-   
-describe Treasure do
+require 'treasure_trove'
+require 'spec_helper'
+
+
+module StudioGame   
+  describe Treasure do
   
   before do
     @treasure = Treasure.new(:hammer, 50)
@@ -54,6 +56,7 @@ describe TreasureTrove do
   
   # or use alternate expectation syntax:
   # expect(TreasureTrove::TREASURES).to include(treasure)
-end
+  end
 
+ end
 end

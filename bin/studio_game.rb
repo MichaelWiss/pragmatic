@@ -1,3 +1,8 @@
+ #!/usr/bin/env ruby
+
+
+
+ 
 #greeting = "Welcome!"
 # 3.times do
 #  puts greeting.upcase 
@@ -76,13 +81,13 @@
 
 #Methods
 # def weekday
-# 	current_time = Time.new
-# 	current_time.strftime("%A")
+# current_time = Time.new
+# current_time.strftime("%A")
 # end
 
 # def movie_listing(title, rank=0)
 
-# 	 "#{weekday.upcase}: #{title.capitalize} has a rank of #{rank} "
+#  "#{weekday.upcase}: #{title.capitalize} has a rank of #{rank} "
 # end
 
 # puts movie_listing("goonies", 10)
@@ -95,20 +100,20 @@
 
 
 # def say_hello(name)
-# 	puts "#{name}"
+# puts "#{name}"
 
 # end
 
 # say_hello("Floyd")
 
 # def say_hello(name)
-# 	"I'm #{name.capitalize}."
+# "I'm #{name.capitalize}."
 # end
 # puts say_hello("Genghis")
 
 
 # def say_hello(name, health=100)
-# 	"I'm #{name.capitalize}, my health is #{health}"
+# "I'm #{name.capitalize}, my health is #{health}"
 # end
 
 # puts say_hello("larry", 60)
@@ -119,11 +124,11 @@
 #   #current_time = Time.now.asctime
 #   current_time = Time.new
 #   current_time.strftime("%I:%M:%S")
-	
+
 # end
 
 # def say_hello(name, health=100)
-# 	"I'm #{name.capitalize}, my health is #{health} at #{time}"
+# "I'm #{name.capitalize}, my health is #{health} at #{time}"
 # end
 
 #  puts say_hello("larry", 60)
@@ -134,23 +139,23 @@
 
 # class Movie
 #   def initialize(title, rank)
-#   	@title = title.capitalize
-#   	@rank = rank
-  	
+#   @title = title.capitalize
+#   @rank = rank
+  
 #   end
 
 #   def thumbs_up
-#   	#@rank = @rank + 1
-#   	@rank += 1
+#   #@rank = @rank + 1
+#   @rank += 1
 #   end
 
 #   def thumbs_down
-#   	#@rank = @rank - 1
-#   	@rank -= 1
+#   #@rank = @rank - 1
+#   @rank -= 1
 #   end
 
 #   def to_s
-#   	"#{@title} has a rank of #{@rank}"
+#   "#{@title} has a rank of #{@rank}"
 #   end
 # end
 
@@ -164,27 +169,27 @@
 
 
 # class Player
-# 	attr_accessor :name
+# attr_accessor :name
 #     attr_reader :health
 
 
-# 	def initialize(name, health=100)
-# 		@name = name.capitalize
-# 		@health = health
+# def initialize(name, health=100)
+# @name = name.capitalize
+# @health = health
 #     end
 
 #     def blam
-#     	@health -=10
-#     	puts "#{@name} got blammed!"
+#     @health -=10
+#     puts "#{@name} got blammed!"
 #     end
 
 #     def woot
-#     	@health +=15
-#     	puts "#{@name} got wooted!"
+#     @health +=15
+#     puts "#{@name} got wooted!"
 #     end
 
 #     def score
-#     	@health + @name.length
+#     @health + @name.length
 #     end
 
 #     def name=(new_name)
@@ -193,7 +198,7 @@
 
 
 #     def to_s
-#     	" #{@name} has a health of #{@health} and a score of #{score}."
+#     " #{@name} has a health of #{@health} and a score of #{score}."
 #     end
 # end
 
@@ -285,15 +290,15 @@
 # puts "There are #{players.size} players in the game:"
 
 # players.each do |p|
-# 	puts p
+# puts p
 # end
 
 # # players.each do |player|
-# # 	puts player
+# # puts player
 # # end
 
 # # players.each do |player|
-# # 	puts player.health
+# # puts player.health
 # # end
 
 # players.pop
@@ -304,17 +309,14 @@
 
 
 # players.each do |player|
-# 	player.blam
-# 	player.woot
-# 	player.blam
+# player.blam
+# player.woot
+# player.blam
 
-# 	puts player
+# puts player
 # end
 
-require_relative 'player'
-require_relative 'game'
-require_relative 'clumsy_player'
-require_relative 'berserk_player'
+
 
 # player1 = Player.new("moe")
 # player2 = Player.new("larry", 60)
@@ -325,30 +327,38 @@ require_relative 'berserk_player'
  # knuckleheads.add_player(player2)
  # knuckleheads.add_player(player3)
 
-knuckleheads = Game.new("Knuckleheads")
-knuckleheads.load_players(ARGV.shift || "players.csv")
 
-klutz = ClumsyPlayer.new("klutz", 105)
-knuckleheads.add_player(klutz)
+require_relative '../lib/studio_game/game'
+require_relative '../lib/studio_game/clumsy_player'
+require_relative '../lib/studio_game/berserk_player'
 
-berserker = BerserkPlayer.new("berserker", 50)
-knuckleheads.add_player(berserker)
+game = StudioGame::Game.new("Knuckleheads")
+
+default_player_file = 
+  File.join(File.dirname(__FILE__), 'players.csv')
+game.load_players(ARGV.shift || default_player_file)
+
+klutz = StudioGame::ClumsyPlayer.new("klutz", 105)
+game.add_player(klutz)
+
+berserker = StudioGame::BerserkPlayer.new("berserker", 50)
+game.add_player(berserker)
 
 loop do
-	puts "\How many game rounds? ('quit' to exit)"
-	answer = gets.chomp.downcase
-	case answer
-	when /^\d+$/
-		knuckleheads.play(answer.to_i)
-	when 'quit', 'exit'
-		knuckleheads.print_stats
-		break
-	else
-		puts "Please enter a number or 'quit'"
-	end
+  puts "\nHow many game rounds? ('quit' to exit)"
+  answer = gets.chomp.downcase
+  case answer
+  when /^\d+$/
+    game.play(answer.to_i)
+  when 'quit', 'exit'
+    game.print_stats
+    break
+  else
+    puts "Please enter a number or 'quit'"
+  end
 end
 
-knuckleheads.save_high_scores
+game.save_high_scores
 
 
 

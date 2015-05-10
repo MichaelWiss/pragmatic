@@ -25,3 +25,4 @@ module StudioGame
     end
     puts "#{clumsy.points} grand total points"
   end
+end

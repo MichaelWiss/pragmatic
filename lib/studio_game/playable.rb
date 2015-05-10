@@ -3,16 +3,16 @@
 
 
     def strong?
-       self.health > 100
+       @health > 100
     end
 
     def blam
-        self.health -=10
+        @health -=10
         puts "#{@name} got blammed!"
     end
 
     def woot
-        self.health +=15
+        @health +=15
         puts "#{@name} got wooted!"
     end
 
